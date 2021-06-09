@@ -1,4 +1,6 @@
-import React from 'react';
+import * as React from 'react';
+// import { NavigationContainer } from '@react-navigation/native';
+// import { createStackNavigator } from '@react-navigation/stack';
 import {
     View, 
     Text,
@@ -6,11 +8,10 @@ import {
     StyleSheet
 } from 'react-native';
 
-function Welcome () {
-    const pressHandler = () => false;
-    // {
-    //   navigation.navigate('Login');
-    // }
+function Welcome ({navigation}:any) {
+    const pressHandler = () =>  {
+       navigation.navigate('Login');
+    }
     return(
         <View style={styles.container}>
            <Text style={styles.textGreet}>Hello! How are you doing?</Text>

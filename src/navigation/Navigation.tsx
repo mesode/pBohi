@@ -1,31 +1,23 @@
-import React from 'react';
-import Navigator from 'react-navigation';
-import { createStackNavigator } from 'react-navigation-stack';
-import { createAppContainer } from 'react-navigation';
-import Welcome from './screens/Welcome/Welcome';
-import Login from './screens/LogIn/Login';
-// import First from './AppScreens/First';
-// import Second from './AppScreens/Second';
-// import AccView from './AppScreens/accView';
-// import ListAccount from './AppScreens/listAccounts';
+import * as React from 'react';
+import { View, Text } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import Welcome from '../screens/Welcome/Welcome';
+import Login from '../screens/LogIn/Login';
 
-const screens = {
-    Welcome: {
-        screen: Welcome
-    },
-    Login: {
-        screen: Login
-    },
-    Accounts: {
-        screen: AccView
-    }
-    // Second: {
-    //     screen: Second
-    // }
+const Stack = createStackNavigator();
+
+function Navigator(){
+    return (
+        <NavigationContainer>
+            <Stack.Navigator initialRouteName="Welcome">
+                <Stack.Screen name="Welcome" component={Welcome} />
+                <Stack.Screen name="Login" component={Login} />
+            </Stack.Navigator>
+        </NavigationContainer>
+    )
+    
 }
 
-const HomeStack = createStackNavigator(screens);
-const AppContainer = createAppContainer(HomeStack);
-
-export default AppContainer;
+export default Navigator;
 

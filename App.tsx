@@ -1,24 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import 'react-native-gesture-handler';
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import GlobalStyles from './src/components/Styles/GlobalStyles';
+// import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Login from './src/screens/LogIn/Login';
-import Welcome from './src/screens/Welcome/Welcome';
+import Navigator from './src/navigation/Navigation';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Welcome />
-      <Login />
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>{ 
+      <View style={{ flex:1 }}>
+        <View style={GlobalStyles.topPadding} />
+        <Navigator />
+      </View>
+    }  
+    </NavigationContainer>
+    
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+

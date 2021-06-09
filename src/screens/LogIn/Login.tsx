@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { 
     View, 
     Text, 
@@ -6,7 +6,7 @@ import {
     TextInput, 
     StyleSheet } from 'react-native';
 
-function Login () {
+function Login ({navigation}: any) {
     
     // const state = {
     // email: '',
